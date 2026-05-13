@@ -2,6 +2,7 @@ package com.example.examplemod;
 
 import com.example.examplemod.platform.Services;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 
 // This class is part of the common project meaning it is shared between all supported loaders. Code written here can only
@@ -27,5 +28,9 @@ public class CommonClass {
 
             Constants.LOG.info("Hello to examplemod");
         }
+    }
+
+    public static ResourceLocation identifier(String path) {
+        return ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, path);
     }
 }
