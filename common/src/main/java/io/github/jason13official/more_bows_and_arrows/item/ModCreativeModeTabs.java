@@ -1,7 +1,7 @@
 package io.github.jason13official.more_bows_and_arrows.item;
 
-import io.github.jason13official.more_bows_and_arrows.MoreBowsAndArrows;
 import io.github.jason13official.more_bows_and_arrows.Constants;
+import io.github.jason13official.more_bows_and_arrows.MoreBowsAndArrows;
 import io.github.jason13official.more_bows_and_arrows.platform.Services;
 import java.util.function.BiConsumer;
 import net.minecraft.network.chat.Component;
@@ -12,17 +12,17 @@ import net.minecraft.world.item.Items;
 
 public class ModCreativeModeTabs {
 
-  public static CreativeModeTab EXAMPLE_TAB = null;
+  public static CreativeModeTab MORE_BOWS_AND_ARROWS = null;
 
   public static void register(BiConsumer<CreativeModeTab, ResourceLocation> consumer) {
 
-    EXAMPLE_TAB = Services.registry().tabBuilder()
-        .icon(() -> new ItemStack(Items.STICK))
-        .title(Component.literal(Constants.MOD_NAME))
+    MORE_BOWS_AND_ARROWS = Services.registry().tabBuilder()
+        .icon(() -> new ItemStack(ModItems.MOD_BOW))
+        .title(Component.translatable("itemGroup.moreBowsAndArrows"))
         .displayItems((itemDisplayParameters, output) -> {
-          output.accept(Items.STICK);
-          output.accept(Items.DIAMOND);
+          output.accept(ModItems.MOD_BOW);
+          output.accept(ModItems.MOD_ARROW);
         }).build();
-    consumer.accept(EXAMPLE_TAB, MoreBowsAndArrows.identifier("example_tab"));
+    consumer.accept(MORE_BOWS_AND_ARROWS, MoreBowsAndArrows.identifier(Constants.MOD_ID));
   }
 }

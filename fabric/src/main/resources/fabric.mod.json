@@ -17,6 +17,9 @@
     "entrypoints": {
         "main": [
             "io.github.jason13official.more_bows_and_arrows.MoreBowsAndArrowsFabric"
+        ],
+        "client": [
+            "io.github.jason13official.more_bows_and_arrows.MoreBowsAndArrowsClientFabric"
         ]
     },
     "mixins": [
